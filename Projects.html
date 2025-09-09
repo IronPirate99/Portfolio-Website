@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            padding: 40px;
+            justify-content: center;
+        }
+        .project-tile {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(30,60,114,0.08);
+            width: 260px;
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .project-tile:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(30,60,114,0.15);
+        }
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #1e3c72;
+        }
+        .project-desc {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 12px;
+        }
+        .project-link {
+            margin-top: auto;
+            color: #2a5298;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .project-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <a href="#" class="navbar-logo">WinnDev</a>
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <!-- <a href="#">About</a> -->
+                <a href="Projects.html">Projects</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <h1 style="text-align:center;">My Projects</h1>
+    <div class="projects-container" id="projectsContainer">
+        <!-- Project tiles will be injected here -->
+    </div>
+    <script>
+        // Example projects array. Add new projects here!
+        const projects = [
+            {
+                title: "Portfolio Website",
+                desc: "A personal portfolio website to showcase my work and skills.",
+                link: "#"
+            },
+            {
+                title: "Weather App",
+                desc: "A web app that displays weather information using an API.",
+                link: "#"
+            },
+            {
+                title: "Task Manager",
+                desc: "A simple task management app to keep track of daily tasks.",
+                link: "#"
+            },
+            {
+                title: "Blog Platform",
+                desc: "A blogging platform where users can create and share posts.",
+                link: "#"
+            },
+            {
+                title: "E-commerce Site",
+                desc: "An online store with product listings and a shopping cart.",
+                link: "#"
+            },
+            {
+                title: "Chat Application",
+                desc: "A real-time chat application using WebSockets.",
+                link: "#"
+            },
+            {
+                title: "Fitness Tracker",
+                desc: "An app to log workouts and track fitness progress.",
+                link: "#"
+            },
+            {
+                title: "Recipe Finder",
+                desc: "A web app to search for recipes based on ingredients.",
+                link: "#"
+            },
+            {
+                title: "Budget Planner",
+                desc: "An app to help manage personal finances and budgeting.",
+                link: "#"
+            },
+            {
+                title: "Travel Journal",
+                desc: "A platform to document and share travel experiences.",
+                link: "#"
+            },{
+                title: "Rental Management System",
+                desc: "A platform to document and share travel experiences.",
+                link: "#"
+            },
+            {
+                title: "Movie Database",
+                desc: "A web app to browse and review movies.",
+                link: "#"
+            },
+          
+            {
+                title: "Photo Gallery",
+                desc: "A responsive photo gallery with lightbox functionality.",
+                link: "#"
+            },
+            {
+                title: "Event Planner",
+                desc: "An app to organize and manage events and invitations.",
+                link: "#"
+            },
+            {
+                title: "News Aggregator",
+                desc: "A web app that aggregates news from various sources.",
+                link: "#"
+            },
+        
+            // Add more projects as needed
+        ];
+
+        function renderProjects() {
+            const container = document.getElementById('projectsContainer');
+            container.innerHTML = '';
+            projects.forEach(project => {
+                const tile = document.createElement('div');
+                tile.className = 'project-tile';
+                tile.innerHTML = `
+                    <div class="project-title">${project.title}</div>
+                    <div class="project-desc">${project.desc}</div>
+                    <a class="project-link" href="${project.link}" target="_blank">View Project</a>
+                `;
+                container.appendChild(tile);
+            });
+        }
+
+        renderProjects();
+    </script>
+<footer style="background: #1e3c72; color: #fff; text-align: center; padding: 24px 0; margin-top: 40px;">
+    <div style="font-size: 1.1rem; margin-bottom: 12px;">Connect with me:</div>
+    <a href="https://github.com/IronPirate99" target="_blank" style="color: #fff; margin: 0 16px; text-decoration: none; font-size: 1.5rem;">
+        <span style="vertical-align: middle;">GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/in/ugochukwu-winner-ogbonnaya/" target="_blank" style="color: #fff; margin: 0 16px; text-decoration: none; font-size: 1.5rem;">
+        <span style="vertical-align: middle;">LinkedIn</span>
+    </a>
+    <a href="https://youtube.com/" target="_blank" style="color: #fff; margin: 0 16px; text-decoration: none; font-size: 1.5rem;">
+        <span style="vertical-align: middle;">YouTube</span>
+    </a>
+</footer>   
+
+
+</body>
+</html>

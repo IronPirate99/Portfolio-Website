@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.dark-mode {
+            background: #181c25 !important;
+            color: #e0e6f0 !important;
+        }
+        body.dark-mode .education-container,
+        body.dark-mode .skill-tile {
+            background: #23283a !important;
+            color: #e0e6f0 !important;
+            box-shadow: 0 2px 16px rgba(20,30,50,0.18);
+        }
+        body.dark-mode .navbar,
+        body.dark-mode nav {
+            background: linear-gradient(90deg, #10131a 0%, #23283a 100%) !important;
+        }
+        body.dark-mode .navbar-logo,
+        body.dark-mode .navbar-links a {
+            color: #fff !important;
+        }
+        body.dark-mode .profile-frame {
+            background: #23283a !important;
+            border-color: #2a5298 !important;
+        }
+        body.dark-mode .profile-name {
+            color: #e0e6f0 !important;
+        }
+        body.dark-mode .floating-paragraph {
+            background: #23283a !important;
+            color: #bfc9da !important;
+        }
+        body.dark-mode footer {
+            background: #10131a !important;
+            color: #fff !important;
+        }
+        .toggle-btn {
+            position: fixed;
+            top: 24px;
+            right: 32px;
+            z-index: 100;
+            background: #fff;
+            color: #1e3c72;
+            border: none;
+            border-radius: 24px;
+            padding: 10px 22px;
+            font-size: 1rem;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(30,60,114,0.08);
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .toggle-btn.dark {
+            background: #23283a;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" id="toggleModeBtn">🌙 Dark Mode</button>
+    <video autoplay muted loop id="bgVideo" style="
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100vw;
+        min-height: 100vh;
+        z-index: -1;
+        object-fit: cover;
+        filter: brightness(0.7);
+    ">
+        <source src="BackroundVideo2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <nav>
+        <div class="navbar">
+            <a href="#" class="navbar-logo">WinnDev</a>
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="Projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <header class="header" style="min-height: calc(100vh - 60px); display: flex; align-items: center; justify-content: center;">
+        <div class="profile-container">
+            <div class="profile-frame">
+                <img src="ProfileImage1.jpg" alt="Profile Picture" class="profile-pic" id="profilePic">
+            </div>
+            <div class="profile-name" id="profileName"></div>
+        </div>
+    </header>
+    <script>
+        // Dark/Light mode toggle
+        const toggleBtn = document.getElementById('toggleModeBtn');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const dark = document.body.classList.contains('dark-mode');
+            toggleBtn.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
+            toggleBtn.classList.toggle('dark', dark);
+        });
+
+        // Array of profile images and (optionally) names
+        const profiles = [
+            { img: "ProfileImage1.jpg", name: "" },
+            { img: "ProfileImage2.jpg", name: "" },
+            { img: "ProfileImage3.jpg", name: "" }
+        ];
+        let current = 0;
+        setInterval(() => {
+            current = (current + 1) % profiles.length;
+            document.getElementById('profilePic').src = profiles[current].img;
+            document.getElementById('profileName').textContent = profiles[current].name;
+        }, 5000);
+    </script>
+<p class="floating-paragraph"  style="text-align: center;" >  Welcome to my portfolio! 👋</p>
+
+
+<h1 id="aboutTitle" style="text-align: center; margin-top: 40px; min-height: 1.2em;">Welcome to to WinnDev</h1>
+<script>
+    // Cool text writing effect for "About Me"
+    const aboutText = "Welcome to to WinnDev";
+    const aboutTitle = document.getElementById("aboutTitle");
+    let idx = 0;
+    function typeWriter() {
+        if (idx <= aboutText.length) {
+            aboutTitle.textContent = aboutText.slice(0, idx);
+            idx++;
+            setTimeout(typeWriter, 120);
+        }
+    }
+    typeWriter();
+</script>   
+
+    <p style="text-align: center; max-width: 600px; margin: 20px auto; color: #f0f0f0;">
+        Hello! I'm TheWinner, a passionate developer with a knack for creating innovative solutions. With a background in computer science and a love for coding, I enjoy building projects that make a difference. When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or indulging in my hobbies like gaming and music.
+
+
+<div class="education-container" style="max-width: 1200px; margin: 48px auto 32px auto; background: #fff; border-radius: 18px; box-shadow: 0 2px 16px rgba(30,60,114,0.08); padding: 32px 28px;">
+    <h2 style="color: #1e3c72; text-align: center; margin-bottom: 24px;">Education</h2>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+        <div style="display: flex; align-items: flex-start; gap: 18px;">
+            <div style="font-size: 2rem; color: #2a5298;">🎓</div>
+            <div>
+                <div style="font-weight: bold; color: #1e3c72;">B.Sc. Computer Science</div>
+                <div style="color: #2a5298;">University of Example</div>
+                <div style="color: #555; font-size: 0.98rem;">2018 – 2022</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 18px;">
+            <div style="font-size: 2rem; color: #2a5298;">📜</div>
+            <div>
+                <div style="font-weight: bold; color: #1e3c72;">Full Stack Web Development</div>
+                <div style="color: #2a5298;">Online Certification, FreeCodeCamp</div>
+                <div style="color: #555; font-size: 0.98rem;">2022</div>
+            </div>
+        </div>
+        <!-- Add more education items as needed -->
+    </div>
+</div>
+<!-- ...existing code... -->
+
+
+
+<h2 style="text-align: center;">Skills &amp; Technologies</h2>
+<div class="skills-tiles-container" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; margin-bottom: 40px;">
+    <div class="skill-tile" style="background:#fff; border-radius:18px; box-shadow:0 4px 16px rgba(30,60,114,0.10); width:220px; height:260px; padding:32px 0 0 0; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+        <canvas id="chart-htmlcss" width="100" height="100" style="margin-bottom:12px;"></canvas>
+        <div style="font-size:2.2rem; color:#1e3c72; margin-bottom:10px;">💻</div>
+        <div style="font-weight:bold; color:#1e3c72; font-size:1.2rem;">HTML &amp; CSS</div>
+        <div style="color:#2a5298; margin-top:6px; font-size:1.1rem;">30%</div>
+    </div>
+    <div class="skill-tile" style="background:#fff; border-radius:18px; box-shadow:0 4px 16px rgba(30,60,114,0.10); width:220px; height:260px; padding:32px 0 0 0; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+        <canvas id="chart-js" width="100" height="100" style="margin-bottom:12px;"></canvas>
+        <div style="font-size:2.2rem; color:#1e3c72; margin-bottom:10px;">🟨</div>
+        <div style="font-weight:bold; color:#1e3c72; font-size:1.2rem;">JavaScript</div>
+        <div style="color:#2a5298; margin-top:6px; font-size:1.1rem;">25%</div>
+    </div>
+    <div class="skill-tile" style="background:#fff; border-radius:18px; box-shadow:0 4px 16px rgba(30,60,114,0.10); width:220px; height:260px; padding:32px 0 0 0; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+        <canvas id="chart-db" width="100" height="100" style="margin-bottom:12px;"></canvas>
+        <div style="font-size:2.2rem; color:#1e3c72; margin-bottom:10px;">🗄️</div>
+        <div style="font-weight:bold; color:#1e3c72; font-size:1.2rem;">Database</div>
+        <div style="color:#2a5298; margin-top:6px; font-size:1.1rem;">15%</div>
+    </div>
+    <div class="skill-tile" style="background:#fff; border-radius:18px; box-shadow:0 4px 16px rgba(30,60,114,0.10); width:220px; height:260px; padding:32px 0 0 0; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+        <canvas id="chart-node" width="100" height="100" style="margin-bottom:12px;"></canvas>
+        <div style="font-size:2.2rem; color:#1e3c72; margin-bottom:10px;">🟦</div>
+        <div style="font-weight:bold; color:#1e3c72; font-size:1.2rem;">Node.js</div>
+        <div style="color:#2a5298; margin-top:6px; font-size:1.1rem;">15%</div>
+    </div>
+    <div class="skill-tile" style="background:#fff; border-radius:18px; box-shadow:0 4px 16px rgba(30,60,114,0.10); width:220px; height:260px; padding:32px 0 0 0; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+        <canvas id="chart-python" width="100" height="100" style="margin-bottom:12px;"></canvas>
+        <div style="font-size:2.2rem; color:#1e3c72; margin-bottom:10px;">🐍</div>
+        <div style="font-weight:bold; color:#1e3c72; font-size:1.2rem;">Python</div>
+        <div style="color:#2a5298; margin-top:6px; font-size:1.1rem;">15%</div>
+    </div>
+</div>
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // ...existing profile image script...
+
+    // Skill percentages and colors
+    const skillCharts = [
+        { id: 'chart-htmlcss', percent: 30, color: '#1e3c72' },
+        { id: 'chart-js', percent: 25, color: '#2a5298' },
+        { id: 'chart-db', percent: 15, color: '#4f8edc' },
+        { id: 'chart-node', percent: 15, color: '#a0c4ff' },
+        { id: 'chart-python', percent: 15, color: '#bfc9da' }
+    ];
+
+    skillCharts.forEach(skill => {
+        const ctx = document.getElementById(skill.id).getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [skill.percent, 100 - skill.percent],
+                    backgroundColor: [skill.color, '#eaeaea'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                cutout: '70%',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                }
+            }
+        });
+    });
+</script>
+</div>
+
+
+
+
+<footer style="background: #1e3c72; color: #fff; text-align: center; padding: 24px 0; margin-top: 40px;">
+    <div style="font-size: 1.1rem; margin-bottom: 12px;">Connect with me:</div>
+    <a href="https://github.com/IronPirate99" target="_blank" style="color: #fff; margin: 0 16px; text-decoration: none; font-size: 1.5rem;">
+        <span style="vertical-align: middle;">GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/in/ugochukwu-winner-ogbonnaya/" target="_blank" style="color: #fff; margin: 0 16px; text-decoration: none; font-size: 1.5rem;">
+        <span style="vertical-align: middle;">LinkedIn</span>
+    </a>
+    <a href="https://youtube.com/" target="_blank" style="color: #fff; margin: 0 16px; text-decoration: none; font-size: 1.5rem;">
+        <span style="vertical-align: middle;">YouTube</span>

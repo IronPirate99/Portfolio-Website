@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | WinnDev</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-container {
+            max-width: 500px;
+            margin: 60px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(30,60,114,0.08);
+            padding: 32px 28px;
+            text-align: center;
+        }
+        .contact-container h1 {
+            color: #1e3c72;
+            margin-bottom: 18px;
+        }
+        .contact-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .contact-container input,
+        .contact-container textarea {
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #bfc9da;
+            font-size: 1rem;
+            resize: vertical;
+        }
+        .contact-container button {
+            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-container button:hover {
+            background: #2a5298;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <a href="index.html" class="navbar-logo">WinnDev</a>
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="#">About</a>
+                <a href="Projects.html">Projects</a>
+                <a href="Contact.html">Contact</a>
+            </div>
+        </div>
+
+          <video autoplay muted loop id="bgVideo" style="
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100vw;
+        min-height: 100vh;
+        z-index: -1;
+        object-fit: cover;
+        filter: brightness(0.7);
+    ">
+        <source src="BackGroundVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    </nav>
+    <div class="contact-container">
+        <h1>Contact Me</h1>
+        <p>Have a question or want to work together? Fill out the form below or reach out via social links!</p>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+
+        <footer style="background: #1e3c72; color: #fff; text-align: center; padding: 24px 0; margin-top: 40px;">
+    <div style="font-size: 1.1rem; margin-bottom: 12px;">Connect with me:</div>
+    <a href="https://github.com/IronPirate99" target="_blank" style="color: #fff; margin: 0 16px; text-decoration: none; font-size: 1.5rem;">
+        <span style="vertical-align: middle;">GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/in/ugochukwu-winner-ogbonnaya/" target="_blank" style="color: #fff; margin: 0 16px; text-decoration: none; font-size: 1.5rem;">
+        <span style="vertical-align: middle;">LinkedIn</span>
+    </a>
+    <a href="https://youtube.com/" target="_blank" style="color: #fff; margin: 0 16px; text-decoration: none; font-size: 1.5rem;">
+        <span style="vertical-align: middle;">YouTube</span>
+    </a>
+</footer>   
+    </div>
